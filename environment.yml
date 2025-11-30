@@ -1,0 +1,14 @@
+name: prob-lab
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10           # Stable version for science
+  - numpy                 # Math engine
+  - pandas                # Data handling
+  - scipy                 # Advanced statistics & probability
+  - matplotlib            # Plotting
+  - seaborn               # Prettier plotting
+  - jupyter               # The notebook interface
+  - ipykernel             # The bridge to VS Code (CRITICAL)
+  - pip                   # Fallback package manager
