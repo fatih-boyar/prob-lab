@@ -1,15 +1,30 @@
 ---
-title: "prob-lab"
+title: "Fatih Boyar"
+image: profile.jpg
+about:
+  template: trestles
+  image-width: 20em
+  image-shape: round
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/yourusername
+    - icon: github
+      text: Github
+      href: https://github.com/yourusername
+    - icon: envelope
+      text: Email
+      href: mailto:your.email@university.edu
 listing:
   contents: posts
-  feed: true
   sort: "date desc"
   type: default
   categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
 ---
 
+I am a PhD student in [Your Department] at [Your University]. 
+My research focuses on **Bayesian Statistics**, **Probability Theory**, and **Scientific Computing**.
 
+Here, I document my learning journey, experiments, and simulations.
+
+## Recent Notes

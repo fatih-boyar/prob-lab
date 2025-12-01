@@ -4,7 +4,7 @@ project:
 website:
   description: "A blog built with Quarto"
   site-url: https://fatih-boyar.github.io/prob-lab # you must change this appropriately for RSS feeds to work properly
-  title: "prob-lab"
+  title: "Probability Lab"
   navbar:
     right:
       - about.qmd
