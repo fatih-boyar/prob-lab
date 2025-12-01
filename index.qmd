@@ -1,6 +1,6 @@
 ---
 title: "Fatih Boyar"
-image: profile_pic.jpg
+image: profile_pic.JPG
 about:
   template: trestles
   image-width: 20em
