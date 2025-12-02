@@ -3,15 +3,12 @@ project:
 
 website:
   description: "A blog built with Quarto"
-  site-url: https://fatih-boyar.github.io/prob-lab # you must change this appropriately for RSS feeds to work properly
+  site-url: https://fatih-boyar.github.io/prob-lab 
   title: "Probability Lab"
   navbar:
     right:
       - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+
 format:
   html:
     theme:

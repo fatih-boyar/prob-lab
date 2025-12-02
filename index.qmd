@@ -11,10 +11,13 @@ about:
       href: https://twitter.com/yourusername
     - icon: github
       text: Github
-      href: https://github.com/yourusername
+      href: https://github.com/fatih-boyar
     - icon: envelope
       text: Email
       href: mailto:your.email@university.edu
+    - text: "{{< ai cv >}}"
+      href: files/Academic_CV.pdf
+      target: _blank
 listing:
   contents: posts
   sort: "date desc"
@@ -22,9 +25,9 @@ listing:
   categories: true
 ---
 
-I am a PhD student in [Your Department] at [Your University]. 
-My research focuses on **Bayesian Statistics**, **Probability Theory**, and **Scientific Computing**.
+I am a PhD student in Operations and Information Management at Bogazici University. 
+I am curious about many things, but at the heart of them all is **Probability**.
 
-Here, I document my learning journey, experiments, and simulations.
+Here, I take notes to myself in my learning journey, experiments, and simulations.
 
 ## Recent Notes
