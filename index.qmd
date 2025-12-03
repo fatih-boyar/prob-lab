@@ -6,18 +6,30 @@ about:
   image-width: 20em
   image-shape: round
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/yourusername
     - icon: github
       text: Github
       href: https://github.com/fatih-boyar
+      target: _blank
     - icon: envelope
       text: Email
-      href: mailto:your.email@university.edu
+      href: mailto:fatihboyar@gmail.com
+      target: _blank
     - text: "{{< ai cv >}}"
       href: files/Academic_CV.pdf
       target: _blank
+    - text: "{{< ai orcid >}} ORCID"
+      href: https://orcid.org/0000-0001-8631-4585
+      target: _blank
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/fatih-boyar-268934130/
+      target: _blank
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/boyarfatih/
+      target: _blank
+
+      
 listing:
   contents: posts
   sort: "date desc"
