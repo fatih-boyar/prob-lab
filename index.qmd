@@ -10,6 +10,9 @@ about:
       text: Github
       href: https://github.com/fatih-boyar
       target: _blank
+    - text: "{{< fa brands kaggle >}} Kaggle"
+      href: https://www.kaggle.com/fatihb
+      target: _blank
     - icon: envelope
       text: Email
       href: mailto:fatihboyar@gmail.com

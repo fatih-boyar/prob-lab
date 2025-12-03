@@ -11,6 +11,8 @@ website:
     right:
       - about.qmd
 
+bibliography: references.bib
+
 format:
   html:
     theme:
