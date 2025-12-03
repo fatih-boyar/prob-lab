@@ -15,7 +15,7 @@ about:
       href: mailto:fatihboyar@gmail.com
       target: _blank
     - text: "{{< ai cv >}}"
-      href: files/Academic_CV.pdf
+      href: prob-lab/files/Academic_CV.pdf
       target: _blank
     - text: "{{< ai orcid >}} ORCID"
       href: https://orcid.org/0000-0001-8631-4585
