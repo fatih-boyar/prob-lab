@@ -1,6 +1,7 @@
 project:
   type: website
-  resources: ["files/"]
+  resources:
+    - "files/"
 
 website:
   description: "A blog built with Quarto"
