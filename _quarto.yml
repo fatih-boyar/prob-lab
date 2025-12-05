@@ -4,12 +4,14 @@ project:
     - "files/"
 
 website:
-  description: "A blog built with Quarto"
+  description: "Fatih Boyar's first blog"
   site-url: https://fatih-boyar.github.io/prob-lab 
   title: "Probability Lab"
   navbar:
     right:
       - about.qmd
+      - href: license.qmd
+        text: License
 
 bibliography: references.bib
 
