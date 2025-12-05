@@ -1,7 +1,7 @@
 ---
 title: "About"
 bibliography: references.bib
-image: profile.jpg
+image: canyon2.jpeg
 about:
   template: marquee
 
@@ -22,3 +22,7 @@ This isn't something we can neglect, especially in the social sciences where sta
 
 So, I decided to save the world (as every PhD student attempts to do) or die trying (which means overall, publishing a few papers).
 Bernoulli's Fallacy by Aubrey Clayton [-@clayton2021bernoulli] greatly helped me put the pieces together. This blog documents my journey of following the Clayton's steps, re-learning probability, running simulations, and building applets, along with some personal reflections.
+
+::: {.small}
+The photo on this page is a gift from my dear friend [(link to the ig page)](https://www.instagram.com/ira.lume/)
+:::
