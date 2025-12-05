@@ -1,24 +1,10 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
     "section": "",
-    "text": "Most published research findings are false (Ioannidis 2005). Unfortunately, the main reason isn’t a few “bad apples” engaging in p-hacking, data fabrication, or other fraudulent practices. Rather, it is due to a form of statistical blindness; specifically, the mechanical application of frequentist methods like significance testing simply because they are the industry standard.\nSince the early 2010s, we have indeed witnessed a massive issue known as the Replication Crisis. Many cornerstone studies, ranging from the social sciences to medicine, failed to replicate because they all followed the same rigid rules of statistical testing. Yet, we seem to keep applying temporary patches, such as lowering the acceptance threshold for p-values to 0.01.\nSo, I decided to save the world (as every PhD student attempts to do) or die trying (which, in this context, just means publishing a few papers). Bernoulli’s Fallacy by Aubrey Clayton (2021) greatly helped me put the pieces together. This blog documents my journey of following the Clayton’s steps, re-learning probability, running simulations, and building applets, along with some personal reflections.\n\n\n\nReferences\n\nClayton, Aubrey. 2021. Bernoulli’s Fallacy: Statistical Illogic and the Crisis of Modern Science. Columbia University Press.\n\n\nIoannidis, John P. A. 2005. “Why Most Published Research Findings Are False.” PLOS Medicine 2 (8): null. https://doi.org/10.1371/journal.pmed.0020124."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
+    "text": "MIT License\nCopyright (c) 2025 Fatih Boyar\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nEXCEPTIONS FOR WRITTEN CONTENT:\nAll non-code content (including text, images, and philosophy notes) is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/"
   },
   {
     "objectID": "index.html",
@@ -33,5 +19,19 @@
     "title": "Fatih Boyar",
     "section": "Recent Notes",
     "text": "Recent Notes"
+  },
+  {
+    "objectID": "posts/learning_is_difficult/index.html",
+    "href": "posts/learning_is_difficult/index.html",
+    "title": "Learning is difficult",
+    "section": "",
+    "text": "Learning is difficult, and it doesn’t get easier. The only thing you realize is that the previous arduous steps seem surprisingly trivial in retrospect. This amazes me. It is like a paradox, the strenuous effort itself is painful and not immediately rewarding. You just remember the hardship as “huh, how hard this thing was before that I’m doing now as if nothing”. To keep learning and improving, you must have this awareness all the time, otherwise it’s just the feeling of difficulty.\nThis way of thinking lead me to understand that it is possible. When you encounter something new (a new topic or a skill), if it is very foreign to you, it may feel like it is impossible to comprehend or to achieve. But that is the only way. If it is difficult, I’m in the correct route. It may sound so trivial when I put it this way but we often miss how learning works and don’t recognize it when we avoid this hard effort. I remember when I meet with this peculiar exam for a pilot training program called DLR test. At first, I said this is just not possible for me. But day by day, improving incrementally, I passed it in the first try (later I gave up on this and thankfully not became a commercial pilot).\nI played video games since I was a kid. If you’d remember, games were more fun and they were objectively more difficult. I remember that I was grinding and pushing and keep trying when I was playing. It was just part of it. I remember that I was teaching techniques to neighbor’s kids older than me to pass a certain level in some game in Atari. Despite this childhood experience, I was struck with this famous indie game called Hollow Knight: Silksong. I said this is ridiculously hard, why do the developers torture me? I even thought some parts are just impossible for me to complete. But then, day by day you keep getting better and improve your skills. I’m amazed how parts that once made me want to throw the controller have now become so easy, only with my improvements in skills. There is the predominant advice in such games among the community: “git gud”.\n\n\n\nHornet from Silksong (Hollow Knight Fandom)\n\n\nI am not the most athletic type, maybe partly because of too much exercise in video games in my developing years and not so much in the sports. But tremendous news, it doesn’t matter too much if your goal is not become a pro. Even if you feel like inherently you are not good at something, or lack of some prior experience or talent, it is perfectly doable. I try to find things that are difficult and know that this is not only a good but the necessary indicator. At first, it was so painful to push myself in road cycling, but now I easily do a 100km in a day.\n\n\n\nMy shameless self promotion of my fitness\n\n\nWhat’s next is math. I’ve always felt inadequate. So my goal is to reach the proficiency level of a math undergrad to have what it takes to confidently discuss probability and statistics. It feels so difficult even now that it’s holding me back from starting. But let’s never ever forget that it is the only way to “git gud”."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Most published research findings are false (Ioannidis 2005). Unfortunately, the main reason isn’t a few “bad apples” engaging in p-hacking, data fabrication, or other fraudulent practices. Rather, it is due to a form of statistical blindness; specifically, the mechanical application of frequentist methods like significance testing simply because they are the industry standard.\nSince the early 2010s, we have indeed witnessed a massive issue known as the Replication Crisis. Many cornerstone studies, ranging from the social sciences to medicine, failed to replicate because they all followed the same rigid rules of statistical testing. Yet, we seem to keep applying temporary patches, such as lowering the acceptance threshold for p-values to 0.01.\nThe bridge out of this mess is actually rethinking probability at a fundamental level. It is a painful realization, mostly because it forces us to go back to the start while everyone else is still busy fighting over methodologies. But really, it just returns us to the perspective E.T. Jaynes pointed out: probability is not a tool for science, but the logic of science (Jaynes 2003). This isn’t something we can neglect, especially in the social sciences where statistical packages are too often treated like push-button appliances.\nSo, I decided to save the world (as every PhD student attempts to do) or die trying (which means overall, publishing a few papers). Bernoulli’s Fallacy by Aubrey Clayton (2021) greatly helped me put the pieces together. This blog documents my journey of following the Clayton’s steps, re-learning probability, running simulations, and building applets, along with some personal reflections.\n\n\n\nReferences\n\nClayton, Aubrey. 2021. Bernoulli’s Fallacy: Statistical Illogic and the Crisis of Modern Science. Columbia University Press.\n\n\nIoannidis, John P. A. 2005. “Why Most Published Research Findings Are False.” PLOS Medicine 2 (8): e124. https://doi.org/10.1371/journal.pmed.0020124.\n\n\nJaynes, Edwin T. 2003. Probability Theory: The Logic of Science. Cambridge university press."
   }
 ]
