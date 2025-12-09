@@ -1,0 +1,115 @@
+---
+title: "Showing Your Right Ear with Your Left Hand"
+description: "How NHST answers the wrong question and tricks us into flipping the logical arrow."
+date: today
+categories: [NHST]
+image: "kulak.png"
+draft: false
+---
+
+*This post mainly follows Bernoulli's Fallacy [-@clayton2021bernoulli] pg. 9. 
+In this post, I'm trying to understand and explain what is wrong with the logic of Null Hypothesis Significance Testing (NHST) without even using alternative solutions like Bayes' theorem.
+I want to examine these errors on their own terms, rather than siding with a rival camp, which would shift the burden of proof onto the foundations of that new method.
+I will save that burden for the long run.*
+
+Most students, myself included, feel like their first statistics course is needlessly difficult, like taking a maze to cross the street.
+There is a Turkish idiom that perfectly captures this feeling: *"showing your right ear with your left hand"* (or vice versa). 
+It describes the act of reaching over your head to touch your ear when you could have simply used the right hand. Choosing a harder way over a direct one.
+NHST feels exactly like this, because that is literally what it does. 
+
+![Showing your right ear with your left hand (Generated using Gemini)](kulak.png){width=50%}
+
+
+The industry standard, Null Hypothesis Significance Testing (NHST) answers only this question:
+
+::: {.text-center}
+"Given a (null) hypothesis, what is the probability of observing data as extreme as this (or more extreme)?"
+:::
+
+For an example:
+
+I have a coffee shop with 2 different bean options "Premium Roast" and "Budget Roast". I want to know if customers could tell the difference.
+
+*   **Hypothesis:** Let's first assume this: "Customers cannot taste the difference, when they pick a cup for premium (or budget), they are guessing randomly (50/50)"
+*   **Data:** I conducted a blind test (sampled from a universe of all the customers I have). Some ratio of customers pick the Premium Roast as the better one.
+*   **Answer:** How extreme is this data given the hypothesis?
+
+The process simply ends here. It gives us the probability of the observation (data) under the assumption (hypothesis). This is a one way logical arrow:
+
+$$
+\text{Hypothesis} \to \text{Data}
+$$
+
+The math ends here. The calculation itself is just a probability statement about data. However, after the end, we tend to jump to some other logical conclusions 
+because first it just vaguely leads there, and secondly what am I going to do with probabilities of data? I am after the hypotheses.
+And this is not a thing for uneducated or amateurs, it's the way of most scientists. 
+
+The huge logical leap as follows:
+
+*   **Jump:** If it is a very very low probability, then something interesting going on. Customers are not just guessing, they can tell the difference.
+
+Now the arrow simply flipped:
+
+$$
+\text{Data} \to \text{Hypothesis}
+$$
+
+But there is no logical reason to simply flip this arrow. Cohen [-@cohen1994earth] explains in his paper called "The earth is round (p<.05)"
+
+::: center
+
+*What's wrong with NHST? Well, among many other things it does not tell us what we want to know, and we so much want to know what we want to know that,
+out of desperation, we nevertheless believe that it does! What we want to know is "Given these data what is the probability that $H_0$ is true?"
+But as most of us know, what it tells us is "Given that $H_0$ is true, what is the probability of these (or more extreme) data?" These are not the same.*
+
+:::
+
+This is called *psychosemantic trap* [@jeffreys1933probability]. Read these statements:
+
+> "We are unlikely to observe an estimate of $x$ far from its true value."
+
+vs.
+
+> "It is unlikely that the true value of $x$ is far from what we observed"
+
+or in our coffee shop example:
+
+> "Assuming the customers are guessing randomly, it is unlikely that we would observe a success rate far from 50%"
+
+vs.
+
+> "Given that we observed a success rate far from 50%, it is unlikely that the customers are guessing randomly"
+
+This feels just like an optical illusion, even if you put so much effort in, they intertwine again. 
+It is very hard to see that they are not the same. To see it clearly, let's try an absurdly extreme approach into our coffee shop:
+
+> "I chose a customer who claims that she is psyhic. But of course I don't believe that she is psychic.
+> 
+> Assuming that she is not psychic, It is very unlikely (0.01, which is p<0.05) that we would observe her guessing the coffee bean correctly 6 times in a row.
+> 
+> She guessed it correctly 6 times in a row.
+> 
+> If she is not psychic, this would happen only 0.01 of the time."
+
+vs. 
+
+> "Given that we observed her guessing correctly 6 times in a row, there is only a 0.01 probability that she is not psychic."
+
+When put it this way, it easier to see that they are not the same. And there are many arguments against this type of experiment setting
+but it is just the same illogical arrow flip. If we cannot reverse in this absurd example, than we cannot do it in the previous ones.
+
+If you think that this is just an absurd thought experiment, lo and behold: almost exactly the same thing happened in a reputable journal in 2011.
+Daryl Bem from Cornell University published a paper [-@bem2011feeling] arguing that college students have precognition (ESP), meaning that they can feel the future.
+In the study, students were shown two curtains on a computer screen. Behind one was a blank wall, behind the other was an image. The students had to guess where the image was.
+Surprisingly, when the images were erotic, students guessed correctly 53.1% of the time. This corresponded to a p-value of 0.01. Rejecting the null hypothesis,
+and flipping the logical arrow, he concluded that students actually have psychic powers. He did not fake the data or something, he was simply following the standard recipe correctly to make a publication.
+
+All things considered, I actually have some respect for the journal and the writer in this event. They were loyal to their methods and 
+did not bend the rules just because the conclusion was ridiculous. They were honest in what they were doing and ready to face the outcome. 
+I once heard a professor say he rejected a submission because all the null hypotheses were conveniently rejected with low p-values (all the stars aligned).
+The argument was that it looked fishy, in the real world, you get messy results. But this leads us to question 
+how you can trust any particular result with very low p-value. Isn't that a bit too convenient as well?
+
+The logical fallacy of the *wrong arrow* explains why p-values are so often misinterpreted. Many try to escape this trap by relying on Confidence Intervals, believing they offer a clearer picture of the truth.
+Unfortunately, they are built on the exact same broken logic. In my next post, I plan to run a simulation to demonstrate that a 
+95% confidence interval does not mean we are 95% confident in the result. In fact, it is just another instance of showing our right ear with our left hand.

@@ -1,0 +1,9 @@
+---
+title: "Sampling vs. Inferential Probability"
+description: "The logical gap in NHST"
+date: today
+categories: [fundamental]
+image: "image.jpg"
+draft: true
+---
+

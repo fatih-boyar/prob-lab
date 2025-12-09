@@ -14,11 +14,12 @@ website:
         text: License
 
 bibliography: references.bib
+style: apa
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: cosmo
+      dark: Darkly
     css: styles.css
 

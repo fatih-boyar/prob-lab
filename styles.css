@@ -3,3 +3,14 @@
 .small {
   font-size: 0.85rem;
 }
+
+.center {
+  text-align: center;
+}
+
+figure > figcaption {
+  text-align: center;     /* center text */
+  font-size: 0.85rem;     /* smaller text */
+  color: #666;            /* gray */
+  margin-top: 0.4em;
+}

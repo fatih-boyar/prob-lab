@@ -1,5 +1,6 @@
 ---
 title: "Learning is difficult"
+description: "And that's the way"
 date: last-modified
 categories: [blog]
 ---
@@ -19,6 +20,7 @@ Despite this childhood experience, I was struck with this famous indie game call
 But then, day by day you keep getting better and improve your skills. I’m amazed how parts that once made me want to throw the controller have now become so easy, only with my improvements in skills.
 There is the predominant advice in such games among the community: "git gud".
 
+
 ![Hornet from Silksong ([Hollow Knight Fandom](https://hollowknight.fandom.com/wiki/Hornet_(Silksong)))](hornet.png)
 
 I am not the most athletic type, maybe partly because of too much exercise in video games in my developing years and not so much in the sports.
@@ -26,6 +28,8 @@ But tremendous news, it doesn't matter too much if your goal is not become a pro
 I try to find things that are difficult and know that this is not only a good but the necessary indicator. At first, it was so painful to push myself in road cycling, but now I easily do a 100km in a day.
 
 ![My shameless self promotion of my fitness](bike.jpg){width=50%}
+
+
 
 What's next is math. I’ve always felt inadequate. So my goal is to reach the proficiency level of a math undergrad to have what it takes to confidently discuss probability and statistics.
 It feels so difficult even now that it's holding me back from starting. But let's never ever forget that it is the only way to "git gud".

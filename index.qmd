@@ -41,7 +41,7 @@ listing:
 ---
 
 I am a PhD student in Operations and Information Management at Bogazici University. 
-I am curious about many things, but at the heart of them all is **Probability**.
+I am curious about maths, probability, statistics, and the logic of science. 
 
 Here, I take notes to myself in my learning journey, experiments, and simulations.
 
