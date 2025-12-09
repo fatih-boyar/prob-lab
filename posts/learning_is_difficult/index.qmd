@@ -1,7 +1,8 @@
 ---
 title: "Learning is difficult"
-description: "And that's the way"
-date: last-modified
+description: "And that's the correct way"
+date: "2025-12-5"
+date-modified: last-modified
 categories: [blog]
 ---
 
