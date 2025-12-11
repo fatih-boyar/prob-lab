@@ -3,7 +3,7 @@ title: "Showing Your Right Ear with Your Left Hand"
 description: "How NHST answers the wrong question and tricks us into flipping the logical arrow."
 date: "2025-12-09"
 date-modified: last-modified
-categories: [NHST, Statistics]
+categories: [NHST, statistics]
 image: "kulak.png"
 draft: false
 ---

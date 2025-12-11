@@ -1,10 +1,159 @@
 ---
-title: "Sampling vs. Inferential Probability"
-description: "The logical gap in NHST"
-date: ""
+title: "Confidence Intervals"
+description: "They are not what they seem"
+date: "2025-12-10"
 date-modified: last-modified
-categories: [fundamental]
-image: "image.jpg"
-draft: true
+categories: [simulation, statistics]
+image: "log_lady.png"
+filters:
+  - shinylive
+draft: false
 ---
 
+*This post is continuation in context with the previous [NHST post](../NHST_wrong/index.qmd).*
+
+![Confidence Intervals are not what they seem -log lady](log_lady.png){width=50%}
+
+The psychosemantic trap of NHST was: we calculate the probability of the data (given hypothesis), but we pretend we calculated the probability of hypothesis (given data).
+The same trap exists in confidence intervals also. Compare these:
+
+$$
+\text{Hypothesis} \to \text{Data}
+$$
+
+> "Assuming the true value is $x$, there is a 95% probability that our random procedure will generate an interval that captures it."
+
+vs.
+
+$$
+\text{Data} \to \text{Hypothesis}
+$$
+
+> "Given this specific interval we just calculated, there is a 95% probability that the True Value is inside it."
+
+In the first one, the logic requires a strict assumption: the parameter (e.g., mean) must be treated as a fixed constant. In this view, the value is set in stone. Only God (or Nature) 
+knows it, and it does not have a probability; it just is. Since we cannot know it, the method relies on a hypothetical scenario: if we were to take infinitely many samples with the same size, 
+these intervals would capture the true parameter 95% of the time. So approximately in 5% of the time, the true parameter would not be in these intervals at all.
+
+But in the second one, the same illegal flip is made. The probability in this setting applies only to the data (intervals), which is a random variable.
+Under this framework, calculating the probability of a hypothesis is impossible. Because the parameter is defined as fixed, it cannot have a probability distribution. 
+The probability is technically 1 or 0, but the math offers us no way to know which.
+
+To put in other way, a 95% confidence interval is *"The set of all Hypotheses ($H_0$) that we would not reject at the $p>0.05$ level"*.
+
+Let's take our coffee shop example. We want to know the *true percentage* of people who can distinguish premium beans to budget beans.
+
+| Guess  | Test  | Result |
+|:-------|:-------|:-----:|
+| Is the true percentage 50%? | Run a test assuming $H_0 = 50\%$  | p-value = 0.03 (significant). Then reject $50\%$   |
+| Is the true percentage 52%? | Run a test assuming $H_0 = 52\%$  | p-value = 0.04 (significant). Then reject $52\%$   |
+| Is the true percentage 53%? | Run a test assuming $H_0 = 53\%$  | p-value = 0.06 (not significant). Then keep $53\%$ |
+| Is the true percentage 60%? | Run a test assuming $H_0 = 60\%$  | p-value = 0.08 (not significant). Then keep $60\%$ |
+| ... | ...  | ... |
+
+Every single step of this process still use the $\text{Hypothesis} \to \text{Data}$ direction. For every possible number from 0% to 100%,
+we are asking "if the truth were $x\%$, would this data be weird?"
+
+Let's see in a simulation to understand the CI in action. Imagine we are sampling from our customer base and test them if they can tell the premium coffee.
+There are 100 confidence intervals in the simulation below. We can think of experimenting 1 time, in 100 different parallel universes. Or experimenting
+100 different times with the same sample size. The hidden truth parameter is the true percentage of a customers success rate of finding the premium coffee. 
+Or the probability of finding the premium coffee of a customer. 
+
+The samples generated from a binomial distribution:
+$$X \sim \text{Bin}(n, p)$$
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+These formulas mean that X follows a binomial distribution. And the probability of X being some value k equals to that formula.
+The simulation creates exactly the same sample if the probability of finding out the premium coffee is equal to that parameter (p)
+As you see, in 95& confidence setting, several intervals do not even include the true parameter. In 90% the picture is quite worse. 
+So take 100 papers using p-value=0.05 and expect around 5 of them doesn't even capture the true value with their intervals 
+**Even if we ignore the illegal arrow flip.**
+
+
+
+```{shinylive-python}
+#| standalone: true
+#| viewerHeight: 800
+#| components: [viewer]
+
+## file: app.py
+from shiny import App, ui, render
+import numpy as np
+import matplotlib.pyplot as plt
+
+# --- MINIMAL UI ---
+app_ui = ui.page_fluid(
+    ui.card(
+        ui.card_header("Experiment Controls"),
+        ui.layout_columns(
+            ui.input_slider("true_p", "Hidden Truth (p)", 0.3, 0.7, 0.5, step=0.01),
+            ui.input_slider("sample_size", "Sample Size (n)", 10, 500, 50),
+            ui.input_radio_buttons("alpha", "Confidence", 
+                                   {"0.01": "99%", "0.05": "95%", "0.10": "90%"}, 
+                                   selected="0.05", inline=True),
+            ui.input_action_button("rerun", "Run", class_="btn-primary w-100 mt-4"),
+            col_widths=(4, 4, 2, 2)
+        )
+    ),
+    ui.card(
+        ui.output_plot("ci_plot", height="500px"),
+    )
+)
+
+# --- SERVER ---
+def server(input, output, session):
+    @render.plot
+    def ci_plot():
+        input.rerun()
+        
+        N = 100  
+        n = input.sample_size()
+        true_p = input.true_p()
+        alpha = float(input.alpha())
+        
+        successes = np.random.binomial(n, true_p, N)
+        sample_ps = successes / n
+        
+        z_map = {0.01: 2.576, 0.05: 1.96, 0.10: 1.645}
+        z_score = z_map.get(alpha, 1.96)
+        
+        se = np.sqrt((sample_ps * (1 - sample_ps)) / n)
+        lower = sample_ps - (z_score * se)
+        upper = sample_ps + (z_score * se)
+        
+        hit = (lower <= true_p) & (upper >= true_p)
+        # Colors: Dark Grey for hits, Red for misses
+        colors = np.where(hit, '#555555', '#E74C3C')
+        widths = np.where(hit, 1, 2.5)
+        alphas = np.where(hit, 0.4, 1.0)
+        
+        fig, ax = plt.subplots(figsize=(10, 6), constrained_layout=True)
+        
+        # The Truth Line
+        ax.axvline(true_p, color='black', linestyle='-', linewidth=2, label="Truth")
+        
+        y_pos = np.arange(N)
+        for i in range(N):
+            ax.hlines(y_pos[i], lower[i], upper[i], color=colors[i], linewidth=widths[i], alpha=alphas[i])
+        
+        ax.set_yticks([])
+        ax.set_xlim(0.2, 0.8)
+        
+        # Smaller Fonts
+        ax.set_xlabel("Estimated Proportion", fontsize=10, color="gray")
+        ax.set_title(f"{N - np.sum(hit)} Intervals Missed the Truth", fontsize=11, fontweight="bold")
+        
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_color('#CCCCCC')
+        ax.tick_params(axis='x', colors='gray')
+        
+        return fig
+
+app = App(app_ui, server)
+
+```
+
+We look at a Confidence Interval and our intuition sees a probability range for the truth. But the logic of orthodox statistics forbids this interpretation. 
+It is a performance guarantee for a method, not a verdict on reality. Like the owls in Twin Peaks, the Log Lady warns us with the intervals. 
