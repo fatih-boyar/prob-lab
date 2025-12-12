@@ -65,7 +65,7 @@ $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 These formulas mean that X follows a binomial distribution. And the probability of X being some value k equals to that formula.
 The simulation creates exactly the same sample if the probability of finding out the premium coffee is equal to that parameter (p)
-As you see, in 95& confidence setting, several intervals do not even include the true parameter. In 90% the picture is quite worse. 
+As you see, in 95% confidence setting, several intervals do not even include the true parameter. In 90% the picture is quite worse. 
 So take 100 papers using p-value=0.05 and expect around 5 of them doesn't even capture the true value with their intervals 
 **Even if we ignore the illegal arrow flip.**
 
@@ -156,4 +156,4 @@ app = App(app_ui, server)
 ```
 
 We look at a Confidence Interval and our intuition sees a probability range for the truth. But the logic of orthodox statistics forbids this interpretation. 
-It is a performance guarantee for a method, not a verdict on reality. Like the owls in Twin Peaks, the Log Lady warns us with the intervals. 
+It is a performance guarantee for a method, not a verdict on reality. Next time, like the owls in Twin Peaks, imagine the Log Lady warning you with the intervals. 
