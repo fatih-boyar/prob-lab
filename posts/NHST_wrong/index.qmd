@@ -43,7 +43,6 @@ $$
 
 The math ends here. The calculation itself is just a probability statement about data. However, after the end, we tend to jump to some other logical conclusions 
 because first it just vaguely leads there, and secondly what am I going to do with probabilities of data? I am after the hypotheses.
-And this is not a thing for uneducated or amateurs, it's the way of most scientists. 
 
 The huge logical leap as follows:
 
@@ -112,5 +111,5 @@ The argument was that it looked fishy, in the real world, you get messy results.
 how you can trust any particular result with very low p-value. Isn't that a bit too convenient as well?
 
 The logical fallacy of the *wrong arrow* explains why p-values are so often misinterpreted. Many try to escape this trap by relying on Confidence Intervals, believing they offer a clearer picture of the truth.
-Unfortunately, they are built on the exact same broken logic. In my next post, I plan to run a simulation to demonstrate that a 
+Unfortunately, they are built on the exact same broken logic. [In my next post](../CI_simulation/index.qmd), I plan to run a simulation to demonstrate that a 
 95% confidence interval does not mean we are 95% confident in the result. In fact, it is just another instance of showing our right ear with our left hand.
