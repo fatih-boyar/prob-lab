@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/missing_priors/index.html",
       "/posts/CI_simulation/index.html",
       "/posts/NHST_wrong/index.html",
       "/posts/learning_is_difficult/index.html"

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-12-09">
-<meta name="description" content="How NHST answers the wrong question and tricks us into flipping the logical arrow.">
+<meta name="dcterms.date" content="2025-12-17">
+<meta name="description" content="Extraordinary Claims and Ordinary Evidence">
 
-<title>Showing Your Right Ear with Your Left Hand – Probability Lab</title>
+<title>Why Statistics ‘Proved’ Psychic Powers – Probability Lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +22,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -67,6 +47,11 @@ div.csl-indent {
 <link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-0d4a9d19931feb4fee1ddab4b2489000.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content="../..">
+<script src="../../site_libs/quarto-contrib/shinylive-0.10.7/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="../../site_libs/quarto-contrib/shinylive-0.10.7/shinylive/run-python-blocks.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/shinylive-0.10.7/shinylive/shinylive.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -327,15 +312,17 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Showing Your Right Ear with Your Left Hand</h1>
+      <h1 class="title">Why Statistics ‘Proved’ Psychic Powers</h1>
                   <div>
         <div class="description">
-          How NHST answers the wrong question and tricks us into flipping the logical arrow.
+          Extraordinary Claims and Ordinary Evidence
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">NHST</div>
+                <div class="quarto-category">simulation</div>
                 <div class="quarto-category">statistics</div>
+                <div class="quarto-category">NHST</div>
+                <div class="quarto-category">Bayes</div>
               </div>
                   </div>
   </div>
@@ -347,7 +334,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 9, 2025</p>
+        <p class="date">December 17, 2025</p>
       </div>
     </div>
     
@@ -373,91 +360,220 @@ window.Quarto = {
 
 
 
-<p><em>This post mainly follows Bernoulli’s Fallacy <span class="citation" data-cites="clayton2021bernoulli">(<a href="#ref-clayton2021bernoulli" role="doc-biblioref">2021</a>)</span> pg. 9. In this post, I’m trying to understand and explain what is wrong with the logic of Null Hypothesis Significance Testing (NHST) without even using alternative solutions like Bayes’ theorem. I want to examine these errors on their own terms, rather than siding with a rival camp, which would shift the burden of proof onto the foundations of that new method. I will save that burden for the long run.</em></p>
-<p>Most students, myself included, feel like their first statistics course is needlessly difficult, like taking a maze to cross the street. There is a Turkish idiom that perfectly captures this feeling: <em>“showing your right ear with your left hand”</em> (or vice versa). It describes the act of reaching over your head to touch your ear when you could have simply used the right hand. Choosing a harder way over a direct one. NHST feels exactly like this, because that is literally what it does.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="kulak.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Showing your right ear with your left hand (Generated using Gemini)</figcaption>
-</figure>
-</div>
-<p>The industry standard, Null Hypothesis Significance Testing (NHST) answers only this question:</p>
-<div class="text-center">
-<p>“Given a (null) hypothesis, what is the probability of observing data as extreme as this (or more extreme)?”</p>
-</div>
-<p>For an example:</p>
-<p>I have a coffee shop with 2 different bean options “Premium Roast” and “Budget Roast”. I want to know if customers could tell the difference.</p>
-<ul>
-<li><strong>Hypothesis:</strong> Let’s first assume this: “Customers cannot taste the difference, when they pick a cup for premium (or budget), they are guessing randomly (50/50)”</li>
-<li><strong>Data:</strong> I conducted a blind test (sampled from a universe of all the customers I have). Some ratio of customers pick the Premium Roast as the better one.</li>
-<li><strong>Answer:</strong> How extreme is this data given the hypothesis?</li>
-</ul>
-<p>The process simply ends here. It gives us the probability of the observation (data) under the assumption (hypothesis). This is a one way logical arrow:</p>
+<p><em>In this post, I will explore the famous Bayes’ Theorem, avoiding the jargon of any specific statistical camp. Instead, I will use a basic derivation to arrive at the theorem naturally.</em></p>
+<p>In my <a href="../../posts/NHST_wrong/index.html">previous post</a>, I attempted to explain that the probability of the data given the hypothesis is not the same thing as probability of the hypothesis given the data.</p>
 <p><span class="math display">\[
-\text{Hypothesis} \to \text{Data}
+\text{Hypothesis} \to \text{Data} \ne \text{Data} \to \text{Hypothesis}
 \]</span></p>
-<p>The math ends here. The calculation itself is just a probability statement about data. However, after the end, we tend to jump to some other logical conclusions because first it just vaguely leads there, and secondly what am I going to do with probabilities of data? I am after the hypotheses.</p>
-<p>The huge logical leap as follows:</p>
-<ul>
-<li><strong>Jump:</strong> If it is a very very low probability, then something interesting going on. Customers are not just guessing, they can tell the difference.</li>
-</ul>
-<p>Now the arrow simply flipped:</p>
+<p>To be more precise, using mathematical notation:</p>
 <p><span class="math display">\[
-\text{Data} \to \text{Hypothesis}
+\mathbb{P}(D \mid H) \ne \mathbb{P}(H \mid D)
 \]</span></p>
-<p>But there is no logical reason to simply flip this arrow. Cohen <span class="citation" data-cites="cohen1994earth">(<a href="#ref-cohen1994earth" role="doc-biblioref">1994</a>)</span> explains in his paper called “The earth is round (p&lt;.05)”</p>
-<div class="center">
-<p><em>What’s wrong with NHST? Well, among many other things it does not tell us what we want to know, and we so much want to know what we want to know that, out of desperation, we nevertheless believe that it does! What we want to know is “Given these data what is the probability that <span class="math inline">\(H_0\)</span> is true?” But as most of us know, what it tells us is “Given that <span class="math inline">\(H_0\)</span> is true, what is the probability of these (or more extreme) data?” These are not the same.</em></p>
-</div>
-<p>This is called <em>psychosemantic trap</em> <span class="citation" data-cites="jeffreys1933probability">(<a href="#ref-jeffreys1933probability" role="doc-biblioref">Jeffreys 1933</a>)</span>. Read these statements:</p>
-<blockquote class="blockquote">
-<p>“We are unlikely to observe an estimate of <span class="math inline">\(x\)</span> far from its true value.”</p>
-</blockquote>
-<p>vs.</p>
-<blockquote class="blockquote">
-<p>“It is unlikely that the true value of <span class="math inline">\(x\)</span> is far from what we observed”</p>
-</blockquote>
-<p>or in our coffee shop example:</p>
-<blockquote class="blockquote">
-<p>“Assuming the customers are guessing randomly, it is unlikely that we would observe a success rate far from 50%”</p>
-</blockquote>
-<p>vs.</p>
-<blockquote class="blockquote">
-<p>“Given that we observed a success rate far from 50%, it is unlikely that the customers are guessing randomly”</p>
-</blockquote>
-<p>This feels just like an optical illusion, even if you put so much effort in, they intertwine again. It is very hard to see that they are not the same. To see it clearly, let’s try an absurdly extreme approach into our coffee shop:</p>
-<blockquote class="blockquote">
-<p>“I chose a customer who claims that she is psyhic. She is either a psychic or not.</p>
-<p>Assuming that she is not psychic, It is very unlikely (0.01, which is p&lt;0.05) that we would observe her guessing the coffee bean correctly 6 times in a row.</p>
-<p>She guessed it correctly 6 times in a row.</p>
-<p>If she is not psychic, this would happen only 0.01 of the time.”</p>
-</blockquote>
-<p>vs.&nbsp;</p>
-<blockquote class="blockquote">
-<p>“Given that we observed her guessing correctly 6 times in a row, there is only a 0.01 probability that she is not psychic.”</p>
-</blockquote>
-<p>When put it this way, it easier to see that they are not the same. And there are many arguments against this type of experiment setting but it is just the same illogical arrow flip. If we cannot reverse in this absurd example, than we cannot do it in the previous ones.</p>
-<p>If you think that this is just an absurd thought experiment, lo and behold: almost exactly the same thing happened in a reputable journal in 2011. Daryl Bem from Cornell University published a paper <span class="citation" data-cites="bem2011feeling">(<a href="#ref-bem2011feeling" role="doc-biblioref">2011</a>)</span> arguing that college students have precognition (ESP), meaning that they can feel the future. In the study, students were shown two curtains on a computer screen. Behind one was a blank wall, behind the other was an image. The students had to guess where the image was. Surprisingly, when the images were erotic, students guessed correctly 53.1% of the time. This corresponded to a p-value of 0.01. Rejecting the null hypothesis, and flipping the logical arrow, he concluded that students actually have psychic powers. He did not fake the data or something, he was simply following the standard recipe correctly to make a publication.</p>
-<p>All things considered, I actually have some respect for the journal and the writer in this event. They were loyal to their methods and did not bend the rules just because the conclusion was ridiculous. They were honest in what they were doing and ready to face the outcome. I once heard a professor say he rejected a submission because all the null hypotheses were conveniently rejected with low p-values (all the stars aligned). The argument was that it looked fishy, in the real world, you get messy results. But this leads us to question how you can trust any particular result with very low p-value. Isn’t that a bit too convenient as well?</p>
-<p>The logical fallacy of the <em>wrong arrow</em> explains why p-values are so often misinterpreted. Many try to escape this trap by relying on Confidence Intervals, believing they offer a clearer picture of the truth. Unfortunately, they are built on the exact same broken logic. <a href="../../posts/CI_simulation/index.html">In my next post</a>, I plan to run a simulation to demonstrate that a 95% confidence interval does not mean we are 95% confident in the result. In fact, it is just another instance of showing our right ear with our left hand.</p>
+<p>In real life, we are after <span class="math inline">\(\mathbb{P}(H \mid D)\)</span> (probability of the hypothesis given data) meaning how reasonable it is for this hypothesis to be true, based on the data at hand. But NHST gives us only <span class="math inline">\(\mathbb{P}(D \mid H)\)</span> (probability of the data given the hypothesis) meaning how likely we would get this data if we assume the hypothesis to be true (or how extreme would that be because we are trying to reject the null hypothesis, showing our right ear with our left hand).</p>
+<p>To see why this matters, let’s derive what we actually want: <span class="math inline">\(\mathbb{P}(H \mid D)\)</span>. By the definition of conditional probability:</p>
+<p><span class="math display">\[ \mathbb{P}(H \mid D) = \frac{\mathbb{P}(H \text{ and } D)}{\mathbb{P}(D)} \tag{1} \]</span></p>
+<p>We don’t know the top part (<span class="math inline">\(\mathbb{P}(H \text{ and } D)\)</span>) directly. But we can calculate it using the information we <em>do</em> have (the logical arrow from Hypothesis to Data). The probability of the Hypothesis and Data happening together is simply the probability of the Hypothesis being true in the first place, multiplied by the probability of the Data given that hypothesis (this is called multiplication rule):</p>
+<p><span class="math display">\[ \mathbb{P}(H \text{ and } D) = \mathbb{P}(H) \times \mathbb{P}(D \mid H) \tag{2} \]</span></p>
+<p>If we substitute (2) back into (1), we get the full picture:</p>
+<p><span class="math display">\[ \mathbb{P}(H \mid D) = \frac{\mathbb{P}(H) \times \mathbb{P}(D \mid H)}{\mathbb{P}(D)} \]</span></p>
+<p>Look at the numerator. The result depends on two things being multiplied: 1. <span class="math inline">\(\mathbb{P}(D \mid H)\)</span>: How likely the data is (What the study calculated). 2. <span class="math inline">\(\mathbb{P}(H)\)</span>: The probability of the hypothesis being true in the first place (The Prior).</p>
+<p>This reveals the fatal flaw in the psychic study. Even if the data was likely (<span class="math inline">\(\mathbb{P}(D \mid H)\)</span> is high), the prior probability of a college student having psychic powers (<span class="math inline">\(\mathbb{P}(H)\)</span>) is infinitesimally small. When you multiply a big number by near-zero, you get near-zero. NHST fails because it ignores this multiplication.</p>
+<p>Below is a demonstration of how <span class="math inline">\(\mathbb{P}(H)\)</span> changes the result. The red line corresponds to ignoring the priors, or taking it 50%. The dotted line changes with the prior probability parameter. Notice how much evidence (consecutive guesses) is needed to reach 95% certainty when we assign a very low probability to someone being a psychic. While the red line just crosses over it after 4 guesses.</p>
+<pre class="shinylive-python" data-engine="python"><code>#| '!! shinylive warning !!': |
+#|   shinylive does not work in self-contained HTML documents.
+#|   Please set `embed-resources: false` in your metadata.
+#| standalone: true
+#| viewerHeight: 700
+
+from shiny import App, ui, render
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Logic for Bayesian Updating
+def calculate_posterior(n_successes, prior):
+    # Likelihood of data given Psychic (Assume perfect psychic, accuracy = 1.0)
+    # If they are psychic, probability of n correct guesses is 1^n = 1.
+    likelihood_psychic = 1.0
+    
+    # Likelihood of data given Random Guesser (accuracy = 0.5)
+    # If random, probability of n correct guesses is 0.5^n.
+    likelihood_random = 0.5 ** n_successes
+    
+    # Bayes Theorem: P(Psychic | Data)
+    numerator = likelihood_psychic * prior
+    denominator = (likelihood_psychic * prior) + (likelihood_random * (1 - prior))
+    
+    return numerator / denominator
+
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.sidebar(
+            ui.h4("The Skeptic's Settings"),
+            ui.input_slider("exponent", "Prior Probability (1 in 10^x)", min=4, max=10, value=6),
+            ui.output_text_verbatim("prior_text"),
+            ui.hr(),
+            ui.input_slider("max_trials", "Max Guesses to Observe", min=5, max=50, value=25),
+            ui.markdown(
+                """
+                **Red Line:** Starts at 50% (Naive).  
+                **Blue Line:** Starts at your chosen Prior.
+                """
+            )
+        ),
+        ui.card(
+            ui.output_plot("bayes_plot")
+        )
+    )
+)
+
+def server(input, output, session):
+    
+    @output
+    @render.text
+    def prior_text():
+        val = 10**input.exponent()
+        return f"Skeptic's Prior: 1 in {val:,}"
+
+    @output
+    @render.plot
+    def bayes_plot():
+        # 1. Setup Data
+        n_trials = input.max_trials()
+        x_axis = np.arange(0, n_trials + 1)
+        
+        # 2. Calculate Naive Observer (Prior = 0.5)
+        prior_naive = 0.5
+        y_naive = [calculate_posterior(n, prior_naive) for n in x_axis]
+        
+        # 3. Calculate Skeptic Observer (User Input)
+        prior_skeptic = 1 / (10**input.exponent())
+        y_skeptic = [calculate_posterior(n, prior_skeptic) for n in x_axis]
+
+        # 4. Plotting
+        fig, ax = plt.subplots()
+        
+        # Plot Naive
+        ax.plot(x_axis, y_naive, color="#e74c3c", linewidth=2, label=f"Naive Prior (0.5)")
+        
+        # Plot Skeptic
+        ax.plot(x_axis, y_skeptic, color="#2c3e50", linewidth=2, linestyle="--", label=f"Skeptic Prior (1 in 10^{input.exponent()})")
+        
+        # Formatting
+        ax.set_ylim(-0.05, 1.05)
+        ax.set_xlabel("Consecutive Correct Guesses")
+        ax.set_ylabel("Probability they are Psychic")
+        ax.set_title("How P(H) Changes the Outcome")
+        ax.legend(loc="lower right", fontsize="small")
+        ax.grid(True, linestyle=':', alpha=0.6)
+        
+        # Add a threshold line for 95% certainty
+        ax.axhline(y=0.95, color='green', linestyle=':', alpha=0.5)
+        ax.text(0, 0.96, "95% Certainty Threshold", color='green', fontsize=8)
+
+        return fig
+
+app = App(app_ui, server)</code></pre>
+<p>Assume we toss a fair coin many times. ‘Fair’ means the probability of heads or tails is 50/50. This corresponds to the <em>Null Hypothesis</em>: a world where no one is psychic and everyone is just guessing.</p>
+<p>Watch how a streak of 6 consecutive tails appears. We know the coin is fair, so this streak is pure chance. But if we stopped the experiment right at that moment, it would look like statistically significant evidence.</p>
+<pre class="shinylive-python" data-engine="python"><code>#| '!! shinylive warning !!': |
+#|   shinylive does not work in self-contained HTML documents.
+#|   Please set `embed-resources: false` in your metadata.
+#| standalone: true
+#| viewerHeight: 600
+
+from shiny import App, ui, render
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+import numpy as np
+
+# Logic to generate flips and find streaks
+def generate_and_highlight(n_flips):
+    # 0 = Heads, 1 = Tails
+    flips = np.random.choice([0, 1], size=n_flips)
+    
+    # Create a color map array: 0=Heads, 1=Tails, 2=Streak
+    visual_map = flips.copy()
+    
+    # Find sequences of 6 or more 1s (Tails)
+    streak_len = 6
+    for i in range(len(flips) - streak_len + 1):
+        # Check if this slice is all 1s
+        if np.all(flips[i : i+streak_len] == 1):
+            # Mark these indices as 2 (Red)
+            visual_map[i : i+streak_len] = 2
+            
+    return flips, visual_map
+
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.sidebar(
+            ui.h4("Coin Toss Settings"),
+            ui.input_slider("n_tosses", "Number of Tosses", min=100, max=2000, value=500, step=50),
+            ui.input_action_button("rerun", "Flip Again!"),
+            ui.hr(),
+            ui.h5("Legend"),
+            ui.markdown(
+                """
+                **Light Gray:** Heads  
+                **Dark Gray:** Tails  
+                **&lt;span style='color: #e74c3c'&gt;Red:&lt;/span&gt;** 6+ Tails in a row
+                """
+            ),
+        ),
+        ui.card(
+            ui.output_plot("grid_plot")
+        )
+    )
+)
+
+def server(input, output, session):
+    
+    @output
+    @render.plot
+    def grid_plot():
+        input.rerun() # React to button
+        n = input.n_tosses()
+        
+        # Generate Data
+        flips, v_map = generate_and_highlight(n)
+        
+        # Calculate grid dimensions to make it look like a square/rectangle
+        # We fix the width to make it readable (e.g., 25 columns)
+        cols = 25
+        rows = (n // cols) + (1 if n % cols &gt; 0 else 0)
+        
+        # Pad the array with -1 (empty) to fit the grid shape
+        pad_size = (rows * cols) - n
+        v_map_padded = np.pad(v_map, (0, pad_size), constant_values=-1)
+        grid = v_map_padded.reshape((rows, cols))
+        
+        # Plotting
+        fig, ax = plt.subplots(figsize=(6, 8))
+        
+        # Define Custom Colors
+        # -1: White (Empty/Background)
+        # 0: Light Gray (Heads)
+        # 1: Dark Gray (Tails)
+        # 2: Red (Streak)
+        cmap = mcolors.ListedColormap(['white', '#ecf0f1', '#34495e', '#e74c3c'])
+        bounds = [-1.5, -0.5, 0.5, 1.5, 2.5]
+        norm = mcolors.BoundaryNorm(bounds, cmap.N)
+        
+        ax.imshow(grid, cmap=cmap, norm=norm, aspect='equal')
+        
+        # Clean up chart
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.set_title(f"Visualizing {n} Coin Tosses", fontsize=14)
+
+        return fig
+
+app = App(app_ui, server)</code></pre>
+<p>In the end, the error in the psychic study (and in NHST generally) wasn’t a calculation mistake; it was a conceptual one. If the claim is extraordinary (like psychic powers), a <span class="math inline">\(p\)</span>-value of 0.01 is simply not heavy enough to tip the scale against the massive weight of prior probability.</p>
 
 
 
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bem2011feeling" class="csl-entry" role="listitem">
-Bem, Daryl J. 2011. <span>“Feeling the Future: Experimental Evidence for Anomalous Retroactive Influences on Cognition and Affect.”</span> <em>Journal of Personality and Social Psychology</em> 100 (3): 407.
-</div>
-<div id="ref-clayton2021bernoulli" class="csl-entry" role="listitem">
-Clayton, Aubrey. 2021. <em>Bernoulli’s Fallacy: Statistical Illogic and the Crisis of Modern Science</em>. Columbia University Press.
-</div>
-<div id="ref-cohen1994earth" class="csl-entry" role="listitem">
-Cohen, Jacob. 1994. <span>“The Earth Is Round (p&lt;. 05).”</span> <em>American Psychologist</em> 49 (12): 997.
-</div>
-<div id="ref-jeffreys1933probability" class="csl-entry" role="listitem">
-Jeffreys, Harold. 1933. <span>“Probability, Statistics, and the Theory of Errors.”</span> <em>Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character</em> 140 (842): 523–35.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
