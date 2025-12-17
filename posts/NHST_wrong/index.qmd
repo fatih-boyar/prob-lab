@@ -83,7 +83,7 @@ vs.
 This feels just like an optical illusion, even if you put so much effort in, they intertwine again. 
 It is very hard to see that they are not the same. To see it clearly, let's try an absurdly extreme approach into our coffee shop:
 
-> "I chose a customer who claims that she is psyhic. But of course I don't believe that she is psychic.
+> "I chose a customer who claims that she is psyhic. She is either a psychic or not.
 > 
 > Assuming that she is not psychic, It is very unlikely (0.01, which is p<0.05) that we would observe her guessing the coffee bean correctly 6 times in a row.
 > 

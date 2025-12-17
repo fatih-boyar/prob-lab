@@ -1,0 +1,254 @@
+---
+title: "Why Statistics 'Proved' Psychic Powers"
+description: "Extraordinary Claims and Ordinary Evidence"
+date: "2025-12-17"
+date-modified: last-modified
+categories: [simulation, statistics, NHST, Bayes]
+image: "coin.png"
+filters:
+  - shinylive
+draft: false
+---
+
+*In this post, I will explore the famous Bayes' Theorem, avoiding the jargon of any specific statistical camp. Instead, I will use a basic derivation to arrive at the theorem naturally.*
+
+In my [previous post](../NHST_wrong/index.qmd), I attempted to explain that the probability of the data given the hypothesis is not the same thing as probability of the hypothesis given the data.
+
+$$
+\text{Hypothesis} \to \text{Data} \ne \text{Data} \to \text{Hypothesis}
+$$
+
+To be more precise, using mathematical notation:
+
+$$
+\mathbb{P}(D \mid H) \ne \mathbb{P}(H \mid D)
+$$
+
+In real life, we are after $\mathbb{P}(H \mid D)$ (probability of the hypothesis given data) meaning how reasonable it is for this hypothesis to be true, based on the data at hand.
+But NHST gives us only $\mathbb{P}(D \mid H)$ (probability of the data given the hypothesis) meaning how likely we would get this data if we assume the hypothesis to be true 
+(or how extreme would that be because we are trying to reject the null hypothesis, showing our right ear with our left hand).
+
+To see why this matters, let's derive what we actually want: $\mathbb{P}(H \mid D)$. By the definition of conditional probability:
+
+$$ \mathbb{P}(H \mid D) = \frac{\mathbb{P}(H \text{ and } D)}{\mathbb{P}(D)} \tag{1} $$
+
+We don't know the top part ($\mathbb{P}(H \text{ and } D)$) directly. But we can calculate it using the information we *do* have (the logical arrow from Hypothesis to Data).
+The probability of the Hypothesis and Data happening together is simply the probability of the Hypothesis being true in the first place, multiplied by the probability of the Data given that hypothesis (this is called multiplication rule):
+
+$$ \mathbb{P}(H \text{ and } D) = \mathbb{P}(H) \times \mathbb{P}(D \mid H) \tag{2} $$
+
+If we substitute (2) back into (1), we get the full picture:
+
+$$ \mathbb{P}(H \mid D) = \frac{\mathbb{P}(H) \times \mathbb{P}(D \mid H)}{\mathbb{P}(D)} $$
+
+Look at the numerator. The result depends on two things being multiplied:
+1. $\mathbb{P}(D \mid H)$: How likely the data is (What the study calculated).
+2. $\mathbb{P}(H)$: The probability of the hypothesis being true in the first place (The Prior).
+
+This reveals the fatal flaw in the psychic study. Even if the data was likely ($\mathbb{P}(D \mid H)$ is high), the prior probability of a college student having psychic powers ($\mathbb{P}(H)$) is infinitesimally small.
+When you multiply a big number by near-zero, you get near-zero. NHST fails because it ignores this multiplication.
+
+
+Below is a demonstration of how $\mathbb{P}(H)$ changes the result. The red line corresponds to ignoring the priors, or taking it 50%. 
+The dotted line changes with the prior probability parameter. Notice how much evidence (consecutive guesses) is needed to reach 95% certainty when we assign a very low probability to someone being a psychic. 
+While the red line just crosses over it after 4 guesses.
+
+
+
+ 
+```{shinylive-python}
+#| standalone: true
+#| viewerHeight: 700
+
+from shiny import App, ui, render
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Logic for Bayesian Updating
+def calculate_posterior(n_successes, prior):
+    # Likelihood of data given Psychic (Assume perfect psychic, accuracy = 1.0)
+    # If they are psychic, probability of n correct guesses is 1^n = 1.
+    likelihood_psychic = 1.0
+    
+    # Likelihood of data given Random Guesser (accuracy = 0.5)
+    # If random, probability of n correct guesses is 0.5^n.
+    likelihood_random = 0.5 ** n_successes
+    
+    # Bayes Theorem: P(Psychic | Data)
+    numerator = likelihood_psychic * prior
+    denominator = (likelihood_psychic * prior) + (likelihood_random * (1 - prior))
+    
+    return numerator / denominator
+
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.sidebar(
+            ui.h4("The Skeptic's Settings"),
+            ui.input_slider("exponent", "Prior Probability (1 in 10^x)", min=4, max=10, value=6),
+            ui.output_text_verbatim("prior_text"),
+            ui.hr(),
+            ui.input_slider("max_trials", "Max Guesses to Observe", min=5, max=50, value=25),
+            ui.markdown(
+                """
+                **Red Line:** Starts at 50% (Naive).  
+                **Blue Line:** Starts at your chosen Prior.
+                """
+            )
+        ),
+        ui.card(
+            ui.output_plot("bayes_plot")
+        )
+    )
+)
+
+def server(input, output, session):
+    
+    @output
+    @render.text
+    def prior_text():
+        val = 10**input.exponent()
+        return f"Skeptic's Prior: 1 in {val:,}"
+
+    @output
+    @render.plot
+    def bayes_plot():
+        # 1. Setup Data
+        n_trials = input.max_trials()
+        x_axis = np.arange(0, n_trials + 1)
+        
+        # 2. Calculate Naive Observer (Prior = 0.5)
+        prior_naive = 0.5
+        y_naive = [calculate_posterior(n, prior_naive) for n in x_axis]
+        
+        # 3. Calculate Skeptic Observer (User Input)
+        prior_skeptic = 1 / (10**input.exponent())
+        y_skeptic = [calculate_posterior(n, prior_skeptic) for n in x_axis]
+
+        # 4. Plotting
+        fig, ax = plt.subplots()
+        
+        # Plot Naive
+        ax.plot(x_axis, y_naive, color="#e74c3c", linewidth=2, label=f"Naive Prior (0.5)")
+        
+        # Plot Skeptic
+        ax.plot(x_axis, y_skeptic, color="#2c3e50", linewidth=2, linestyle="--", label=f"Skeptic Prior (1 in 10^{input.exponent()})")
+        
+        # Formatting
+        ax.set_ylim(-0.05, 1.05)
+        ax.set_xlabel("Consecutive Correct Guesses")
+        ax.set_ylabel("Probability they are Psychic")
+        ax.set_title("How P(H) Changes the Outcome")
+        ax.legend(loc="lower right", fontsize="small")
+        ax.grid(True, linestyle=':', alpha=0.6)
+        
+        # Add a threshold line for 95% certainty
+        ax.axhline(y=0.95, color='green', linestyle=':', alpha=0.5)
+        ax.text(0, 0.96, "95% Certainty Threshold", color='green', fontsize=8)
+
+        return fig
+
+app = App(app_ui, server)
+```
+
+Assume we toss a fair coin many times. 'Fair' means the probability of heads or tails is 50/50. This corresponds to the *Null Hypothesis*: 
+a world where no one is psychic and everyone is just guessing.
+
+Watch how a streak of 6 consecutive tails appears. We know the coin is fair, so this streak is pure chance. 
+But if we stopped the experiment right at that moment, it would look like statistically significant evidence.
+
+```{shinylive-python}
+#| standalone: true
+#| viewerHeight: 600
+
+from shiny import App, ui, render
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+import numpy as np
+
+# Logic to generate flips and find streaks
+def generate_and_highlight(n_flips):
+    # 0 = Heads, 1 = Tails
+    flips = np.random.choice([0, 1], size=n_flips)
+    
+    # Create a color map array: 0=Heads, 1=Tails, 2=Streak
+    visual_map = flips.copy()
+    
+    # Find sequences of 6 or more 1s (Tails)
+    streak_len = 6
+    for i in range(len(flips) - streak_len + 1):
+        # Check if this slice is all 1s
+        if np.all(flips[i : i+streak_len] == 1):
+            # Mark these indices as 2 (Red)
+            visual_map[i : i+streak_len] = 2
+            
+    return flips, visual_map
+
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.sidebar(
+            ui.h4("Coin Toss Settings"),
+            ui.input_slider("n_tosses", "Number of Tosses", min=100, max=2000, value=500, step=50),
+            ui.input_action_button("rerun", "Flip Again!"),
+            ui.hr(),
+            ui.h5("Legend"),
+            ui.markdown(
+                """
+                **Light Gray:** Heads  
+                **Dark Gray:** Tails  
+                **<span style='color: #e74c3c'>Red:</span>** 6+ Tails in a row
+                """
+            ),
+        ),
+        ui.card(
+            ui.output_plot("grid_plot")
+        )
+    )
+)
+
+def server(input, output, session):
+    
+    @output
+    @render.plot
+    def grid_plot():
+        input.rerun() # React to button
+        n = input.n_tosses()
+        
+        # Generate Data
+        flips, v_map = generate_and_highlight(n)
+        
+        # Calculate grid dimensions to make it look like a square/rectangle
+        # We fix the width to make it readable (e.g., 25 columns)
+        cols = 25
+        rows = (n // cols) + (1 if n % cols > 0 else 0)
+        
+        # Pad the array with -1 (empty) to fit the grid shape
+        pad_size = (rows * cols) - n
+        v_map_padded = np.pad(v_map, (0, pad_size), constant_values=-1)
+        grid = v_map_padded.reshape((rows, cols))
+        
+        # Plotting
+        fig, ax = plt.subplots(figsize=(6, 8))
+        
+        # Define Custom Colors
+        # -1: White (Empty/Background)
+        # 0: Light Gray (Heads)
+        # 1: Dark Gray (Tails)
+        # 2: Red (Streak)
+        cmap = mcolors.ListedColormap(['white', '#ecf0f1', '#34495e', '#e74c3c'])
+        bounds = [-1.5, -0.5, 0.5, 1.5, 2.5]
+        norm = mcolors.BoundaryNorm(bounds, cmap.N)
+        
+        ax.imshow(grid, cmap=cmap, norm=norm, aspect='equal')
+        
+        # Clean up chart
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.set_title(f"Visualizing {n} Coin Tosses", fontsize=14)
+
+        return fig
+
+app = App(app_ui, server)
+```
+
+In the end, the error in the psychic study (and in NHST generally) wasn't a calculation mistake; it was a conceptual one.
+If the claim is extraordinary (like psychic powers), a $p$-value of 0.01 is simply not heavy enough to tip the scale against the massive weight of prior probability.

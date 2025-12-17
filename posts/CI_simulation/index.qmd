@@ -3,7 +3,7 @@ title: "Confidence Intervals"
 description: "They are not what they seem"
 date: "2025-12-10"
 date-modified: last-modified
-categories: [simulation, statistics]
+categories: [simulation, statistics, NHST]
 image: "log_lady.png"
 filters:
   - shinylive
