@@ -1,0 +1,36 @@
+---
+title: "Opinions to Age"
+description: "Will they age like wine or milk"
+date: "2026-01-15"
+date-modified: last-modified
+categories: [blog]
+image: "barrel.png"
+draft: false
+---
+
+I will use this page to vent my opinions, hot-takes, and rants. Later, I will see if they aged like wine or milk.
+
+## The learning and improving side of social media is mostly noise, and we are overwhelmed by it
+January 15, 2026
+
+I used to find YouTube tremendously helpful for learning and being exposed to new ideas and perspectives. It had the same unfortunate fate of 'engagement maxxing' algorithmic change with the other
+media. Now it feels like every bit of new information, any advice, dos and don'ts are overwhelming, too much, sloppy, unimportant, and further annoying. 
+I'm not an expert of how these algorithms work but I guess that the channel owners (or creators in more contemporary jargon) are forced to not only make new things consistently, but more rapidly.
+However, knowledge (or say useful, helpful or novel things worth sharing) does not accumulate with the expected rapid pace. Therefore, apart from shortening the contents made, we are exposed to more and more trivial, marginal, or 
+worse, untested things. So we should develop criterion that examines how much a channel (or creator) keep its feet on the ground vs. makes trivial, unimportant things.
+The measure can be something like a mix of 'skin in the game' and 'walking the walk' as in NN Taleb's term. Take the portfolio of a creator and ask how much of those things you told us are still important to you, do or use them on a daily basis, 
+stand by them to this day, or made a habit of them so it is still part of you, and will you be subject to the possible downsides with your audience if you are wrong.
+
+For an example. I remember this thing called 'Coffee Nap'. The idea is you drink coffee first, then do a power nap right after (for 15-20 min). Meanwhile the caffeine works its way so when you wake up 
+you both get the benefits of the nap and the caffeine simultaneously. Apart from taking gifts of nature such as a nice cup of coffee and turning it to an extremely utilized commodity for 'efficiency',
+let's ask the people who advocated this idea when it was trendy: do you still do it? You have a 25-minute 'video essay' on it from 4 years ago, tell me how this great innovation improved your life.
+I am pretty sure that the percentage of people who made a habit of this strategy that offers very marginal advantage.
+
+It's a good strategy to eliminate the unfavorable examples. It can be used also for the good ones. They typically live by and be transparent with their opinions, advice, rules, and overall work they present.
+Without advocating for their ideas to be good or correct in any sense, I can exemplify some of the YouTubers off the top of my head: Kneesovertoesguy, WhatIveLearned (Joseph Everett), movementbydavid. These people 
+live by their own advice and be subject to them if mistaken. A really unfavorable example could be TedX talks with unrelated, untested, unimportant
+stuff poured at our heads. 
+
+This might sound like a trivial problem to focus on in these days, but I believe that in some part this is the reason why we are overwhelmed and got sick of everything that is conveyed to us.
+It's just too much, can't distinguish good from bad, get irritated, thus shut down our percepctions altogether. 
+
