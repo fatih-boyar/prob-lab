@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-02-09">
+<meta name="description" content="A perfect example of an NHST fallacy">
 
-<title>Fatih Boyar – Probability Lab</title>
+<title>If not purely random, than reliable? – Probability Lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,36 +22,56 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0d4a9d19931feb4fee1ddab4b2489000.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-0d4a9d19931feb4fee1ddab4b2489000.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content="../..">
+<script src="../../site_libs/quarto-contrib/shinylive-0.10.7/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="../../site_libs/quarto-contrib/shinylive-0.10.7/shinylive/run-python-blocks.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/shinylive-0.10.7/shinylive/shinylive.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,70 +99,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -305,11 +269,11 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Probability Lab</span>
     </a>
   </div>
@@ -320,11 +284,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./license.html"> 
+    <a class="nav-link" href="../../license.html"> 
 <span class="menu-text">License</span></a>
   </li>  
 </ul>
@@ -336,190 +300,267 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">If not purely random, than reliable?</h1>
+                  <div>
+        <div class="description">
+          A perfect example of an NHST fallacy
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">NHST</div>
+                <div class="quarto-category">statistics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 9, 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">February 10, 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="QmF5ZXM=">Bayes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmxvZw==">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TkhTVA==">NHST <span class="quarto-category-count">(4)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3RhdGlzdGljcw==">statistics <span class="quarto-category-count">(4)</span></div></div></div>
+    
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profile_pic.JPG" class="about-image
-  round " style="height: 20em; width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Fatih Boyar</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://github.com/fatih-boyar" class="about-link" rel="" target="_blank">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.kaggle.com/fatihb" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="fa-brands fa-kaggle" aria-label="kaggle"></i> Kaggle</span>
-  </a>
-  <a href="mailto:fatihboyar@gmail.com" class="about-link" rel="" target="_blank">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="/prob-lab/files/Academic_CV.pdf" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-cv" aria-label="cv"></i></span>
-  </a>
-  <a href="https://orcid.org/0000-0001-8631-4585" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-orcid" aria-label="orcid"></i> ORCID</span>
-  </a>
-  <a href="https://www.linkedin.com/in/fatih-boyar-268934130/" class="about-link" rel="" target="_blank">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://www.instagram.com/boyarfatih/" class="about-link" rel="" target="_blank">
-    <i class="bi bi-instagram"></i>
-     <span class="about-link-text">Instagram</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-
-<p>I am a PhD student in Operations and Information Management at Bogazici University. I am curious about maths, probability, statistics, and the logic of science.</p>
-<p>Here, I take notes to myself in my learning journey, experiments, and simulations.</p>
-<section id="recent-notes" class="level2">
-<h2 data-anchor-id="recent-notes">Recent Notes</h2>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</section>
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TkhTVCUyQ3N0YXRpc3RpY3M=" data-listing-date-sort="1770584400000" data-listing-file-modified-sort="1770720679385" data-listing-date-modified-sort="1770720679000" data-listing-reading-time-sort="12" data-listing-word-count-sort="2279">
-<div class="thumbnail"><a href="./posts/reliability_nonsense/index.html" class="no-external">
-<img loading="lazy" src="./posts/reliability_nonsense/reliable.png" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/reliability_nonsense/index.html" class="no-external">If not purely random, than reliable?</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TkhTVA=='); return false;">NHST</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
+
+
+
+
+<p>Here is a perfect example of an NHST fallacy that I encountered. I had to read an old paper from 1988 <span class="citation" data-cites="zimmer1988impressions">(<a href="#ref-zimmer1988impressions" role="doc-biblioref">Zimmer and Golden 1988</a>)</span> about content analysis of consumer images for one of my PhD courses “Research Methods”. Often, when you read literature from that era, it is a classic, and still relevant, therefore you encounter a great work. However, that is not the case here. An outdated textbook was used for the course throughout the years, and many papers simply remained in the corpus.</p>
+<p>In the paper, authors try to find the “images” of retail stores. They literally ask: “Please describe your image of ________ (store name)”. Kinda funny when you put it in this way, but before that studies involved differential scales such as interesting vs.&nbsp;boring, or strong vs.&nbsp;weak etc. So at that time, asking the image directly provided more and nuanced data. Anyway, when you ask in an unsutructured way, the effort lies on inferring themes or categories from those answers people gave about images. Skipping the details, the authors refined the data to 220 themes and then to 47 categories. The 3 judges (assistants) were brought in after the categories were created to test if the categories made sense. These 3 judges also did the same thing, reduced 220 themes into 47 categories and then they compared the results of these judges to see how similar the outcome was, therefore provide reliability of this categorization. Showing that it is not just subjective decisions of authors but a generalizable logic. The results are in the table.</p>
+<div id="tbl-reliability" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reliability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Inter-rater reliability comparison between judges.
+</figcaption>
+<div aria-describedby="tbl-reliability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Judges</th>
+<th style="text-align: right;">Number Matching (out of 220)</th>
+<th style="text-align: right;">Percent Matching</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A and B</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">40.72%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A and C</td>
+<td style="text-align: right;">107</td>
+<td style="text-align: right;">48.42%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B and C</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">53.85%</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="delink listing-description"><a href="./posts/reliability_nonsense/index.html" class="no-external">
-<p>A perfect example of an NHST fallacy</p>
-</a></div>
+</figure>
 </div>
-<div class="metadata">
-<a href="./posts/reliability_nonsense/index.html" class="no-external">
-<div class="listing-date">
-Feb 9, 2026
+<p>The logic in calculating reliability is simply asking this:</p>
+<p>“How extreme would it be for two judges to make so many identical choices, assuming the choices were completely random?”</p>
+<p>Because it is binary, it follows binomial distribution. Let’s see A and B. They made the same choice 40% of the time. Oh my, this is so extreme, therefore they were not doing this randomly, they are up to something!</p>
+<p>Well, in this example its clear that both the question and the logic is silly. First, they are of course not choosing the categories randomly. Second, we see the infamous illegal logic flip right there: “If it is too extreme, then it can’t be random.” Jumping from rejecting the null hypothesis (randomly choosing) to conferring the categorisation is reliable.</p>
+<p>The probability of matching 90 out of 220 (given that the choices were random) is extremely small. But check the calculation below, even if the matches were only 11, the probability is 0.005, falling way below the generally acceptable p-values (would get three nice stars *** because p&lt;0.01). Does this mean that even if 11 matches out of 220 would mean that the study achieved reliability?</p>
+<pre class="shinylive-python" data-engine="python"><code>#| '!! shinylive warning !!': |
+#|   shinylive does not work in self-contained HTML documents.
+#|   Please set `embed-resources: false` in your metadata.
+#| standalone: true
+#| viewerHeight: 500
+#| shiny: python
+
+from shiny import App, ui, render, reactive
+from scipy.stats import binom
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Helper to create the "Label = [Input]" layout
+# This forces the label to be on the left of the input box
+def inline_control(label_text, input_ui):
+    return ui.div(
+        ui.span(label_text, style="font-weight: bold; font-size: 1.2rem; margin-right: 10px; white-space: nowrap;"),
+        ui.div(input_ui, style="width: 100%;"),
+        class_="d-flex align-items-center mb-2"
+    )
+
+app_ui = ui.page_fluid(
+    # Custom CSS to tighten the spacing inside the inputs for a compact look
+    ui.tags.style("""
+        .form-group { margin-bottom: 0 !important; } 
+        .form-control { padding: 4px 8px; }
+        .shiny-input-container { width: 100% !important; }
+    """),
+
+    # 1. Title Area
+    ui.div(
+        ui.h3("Binomial Distribution", style="margin-bottom: 0;"),
+        ui.h4(ui.HTML("X ~ Bin(n, p)"), style="margin-top: 5px;"),
+        style="text-align: center; margin-bottom: 15px; background-color: #e9ecef; padding: 10px; border-radius: 5px;"
+    ),
+    
+    # 2. Controls Area (Gray Box)
+    ui.div(
+        # Row 1: n and p
+        ui.row(
+            ui.column(4, 
+                inline_control("n =", ui.input_numeric("n", None, value=220, step=1))
+            ),
+            ui.column(4, 
+                inline_control("p =", ui.input_text("p_str", None, value="1/47"))
+            ),
+             # Spacer column to center things if needed, or leave empty
+            ui.column(4)
+        ),
+        
+        # Row 2: x, Type, and Result
+        ui.row(
+            ui.column(4, 
+                inline_control("x =", ui.input_numeric("x", None, value=11, step=1))
+            ),
+            ui.column(3, 
+                ui.input_select("type", None, 
+                    {"eq": "P(X = x)", "lte": "P(X &lt;= x)", "gte": "P(X &gt;= x)"}, 
+                    width="100%"
+                )
+            ),
+            ui.column(3, 
+                # The Red Result Box
+                ui.div(
+                    ui.output_text("result_val", inline=True),
+                    style="background-color: #ea9999; border: 1px solid #ced4da; border-radius: 4px; padding: 4px 10px; font-weight: bold; min-height: 33px; display: flex; align-items: center;"
+                )
+            )
+        ),
+        style="max-width: 800px; margin: 0 auto;" # Center the controls
+    ),
+    
+    # 3. Plot Area
+    ui.div(
+        ui.output_plot("dist_plot", height="300px"),
+        style="margin-top: 10px;"
+    )
+)
+
+def server(input, output, session):
+    
+    @reactive.Calc
+    def p_val():
+        try:
+            val = eval(input.p_str(), {"__builtins__": None}, {})
+            if not isinstance(val, (int, float)) or val &lt; 0 or val &gt; 1:
+                return None
+            return float(val)
+        except Exception:
+            return None
+
+    @render.text
+    def result_val():
+        n = input.n()
+        x = input.x()
+        p = p_val()
+        
+        if p is None or n is None or x is None: 
+            return "Err"
+        
+        type_ = input.type()
+        
+        if type_ == "eq":
+            prob = binom.pmf(x, n, p)
+        elif type_ == "lte":
+            prob = binom.cdf(x, n, p)
+        else: # gte
+            prob = 1 - binom.cdf(x - 1, n, p)
+            
+        if 0 &lt; prob &lt; 0.0001:
+            return f"{prob:.4e}"
+        return f"{prob:.5f}"
+
+    @render.plot
+    def dist_plot():
+        n = input.n()
+        p = p_val()
+        target_x = input.x()
+        
+        if p is None or n is None: return None
+
+        # Calculate plotting range (mean +/- 4 SD)
+        mean = n * p
+        sd = np.sqrt(n * p * (1 - p))
+        
+        low = max(0, int(np.floor(mean - 4 * sd)))
+        high = min(n, int(np.ceil(mean + 6 * sd)))
+        
+        # If the range is too narrow (e.g. n=1), force a small window
+        if high - low &lt; 5: 
+            high = low + 10
+            
+        x_vals = np.arange(low, high + 1)
+        y_vals = binom.pmf(x_vals, n, p)
+        
+        fig, ax = plt.subplots()
+        
+        # Plot bars
+        bars = ax.bar(x_vals, y_vals, color="#6495ED", width=0.6, align='center')
+        
+        # Highlight specific x
+        if target_x is not None and low &lt;= target_x &lt;= high:
+            idx = np.where(x_vals == target_x)[0]
+            if len(idx) &gt; 0:
+                bars[idx[0]].set_color("#e8586d")
+
+        # Clean up styling
+        ax.set_ylabel("P(X=x)")
+        ax.set_xlabel("x")
+        
+        # Remove top/right spines for cleaner look
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False) # Optional: cleaner look
+        
+        plt.tight_layout()
+        return fig
+
+app = App(app_ui, server)
+</code></pre>
+<p>The literature improved on this reliability issue and better methods were suggested. But the most fundamental logic of NHST still consists of course. During the lecture, I had some suggestions involving priors and beta distributions, arguing that we need prior information, and we can construct them as if judges category choices were not completely random but coming from a common beta distribution. Therefore, some of the choices for categories tend to have higher probability and some not. But these sounded as something esoteric and did not get much attention.</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-zimmer1988impressions" class="csl-entry" role="listitem">
+Zimmer, Mary R, and Linda L Golden. 1988. <span>“Impressions of Retail Stores: A Content Analysis of Consume.”</span> <em>Journal of Retailing</em> 64 (3): 265.
 </div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="c2ltdWxhdGlvbiUyQ3N0YXRpc3RpY3MlMkNOSFNUJTJDQmF5ZXM=" data-listing-date-sort="1765918800000" data-listing-file-modified-sort="1765978424649" data-listing-date-modified-sort="1765978424000" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
-<div class="thumbnail"><a href="./posts/missing_priors/index.html" class="no-external">
-<img loading="lazy" src="./posts/missing_priors/coin.png" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/missing_priors/index.html" class="no-external">Why Statistics ‘Proved’ Psychic Powers</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TkhTVA=='); return false;">NHST</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QmF5ZXM='); return false;">Bayes</div>
-</div>
-<div class="delink listing-description"><a href="./posts/missing_priors/index.html" class="no-external">
-<p>Extraordinary Claims and Ordinary Evidence</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/missing_priors/index.html" class="no-external">
-<div class="listing-date">
-Dec 17, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="c2ltdWxhdGlvbiUyQ3N0YXRpc3RpY3MlMkNOSFNU" data-listing-date-sort="1765314000000" data-listing-file-modified-sort="1768482518289" data-listing-date-modified-sort="1768482518000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1439">
-<div class="thumbnail"><a href="./posts/CI_simulation/index.html" class="no-external">
-<img loading="lazy" src="./posts/CI_simulation/intervals_cover.png" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/CI_simulation/index.html" class="no-external">Confidence Intervals</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TkhTVA=='); return false;">NHST</div>
-</div>
-<div class="delink listing-description"><a href="./posts/CI_simulation/index.html" class="no-external">
-<p>They are not what they seem</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/CI_simulation/index.html" class="no-external">
-<div class="listing-date">
-Dec 10, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="TkhTVCUyQ3N0YXRpc3RpY3M=" data-listing-date-sort="1765227600000" data-listing-file-modified-sort="1765961349426" data-listing-date-modified-sort="1765961349000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1111">
-<div class="thumbnail"><a href="./posts/NHST_wrong/index.html" class="no-external">
-<img loading="lazy" src="./posts/NHST_wrong/kulak.png" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/NHST_wrong/index.html" class="no-external">Showing Your Right Ear with Your Left Hand</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TkhTVA=='); return false;">NHST</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-</div>
-<div class="delink listing-description"><a href="./posts/NHST_wrong/index.html" class="no-external">
-<p>How NHST answers the wrong question and tricks us into flipping the logical arrow.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/NHST_wrong/index.html" class="no-external">
-<div class="listing-date">
-Dec 9, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="YmxvZw==" data-listing-date-sort="1764882000000" data-listing-file-modified-sort="1765291621166" data-listing-date-modified-sort="1765291621000" data-listing-reading-time-sort="3" data-listing-word-count-sort="544">
-<div class="thumbnail"><a href="./posts/learning_is_difficult/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/learning_is_difficult/hornet.png"  class="thumbnail-image card-img"/></p>
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/learning_is_difficult/index.html" class="no-external">Learning is difficult</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('YmxvZw=='); return false;">blog</div>
-</div>
-<div class="delink listing-description"><a href="./posts/learning_is_difficult/index.html" class="no-external">
-<p>And that’s the correct way</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/learning_is_difficult/index.html" class="no-external">
-<div class="listing-date">
-Dec 5, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main></div>
-</div>
- <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -535,6 +576,13 @@ Dec 5, 2025
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
