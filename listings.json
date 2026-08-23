@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/eugenics/index.html",
       "/posts/reliability_nonsense/index.html",
       "/posts/missing_priors/index.html",
       "/posts/CI_simulation/index.html",

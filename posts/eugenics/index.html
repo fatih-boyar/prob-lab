@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-08-23">
+<meta name="description" content="How shielding eugenics behind statistics still relevant today">
 
-<title>Fatih Boyar – Probability Lab</title>
+<title>The Dark Past of Statistics – Probability Lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,36 +22,51 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0d4a9d19931feb4fee1ddab4b2489000.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-0d4a9d19931feb4fee1ddab4b2489000.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,70 +94,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
+<style>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
+      .quarto-title-block .quarto-title-banner {
+        background-image: url(skull.jpg);
+background-size: cover;
       }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
+</style>
 
-<link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -305,11 +271,11 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Probability Lab</span>
     </a>
   </div>
@@ -320,11 +286,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./license.html"> 
+    <a class="nav-link" href="../../license.html"> 
 <span class="menu-text">License</span></a>
   </li>  
 </ul>
@@ -336,213 +302,106 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Dark Past of Statistics</h1>
+                  <div>
+        <div class="description">
+          How shielding eugenics behind statistics still relevant today
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">statistics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 23, 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">August 23, 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="QmF5ZXM=">Bayes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YmxvZw==">blog <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TkhTVA==">NHST <span class="quarto-category-count">(4)</span></div><div class="category" data-category="c2ltdWxhdGlvbg==">simulation <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3RhdGlzdGljcw==">statistics <span class="quarto-category-count">(5)</span></div></div></div>
+    
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profile_pic.JPG" class="about-image
-  round " style="height: 20em; width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Fatih Boyar</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://github.com/fatih-boyar" class="about-link" rel="" target="_blank">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.kaggle.com/fatihb" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="fa-brands fa-kaggle" aria-label="kaggle"></i> Kaggle</span>
-  </a>
-  <a href="mailto:fatihboyar@gmail.com" class="about-link" rel="" target="_blank">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="/prob-lab/files/Academic_CV.pdf" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-cv" aria-label="cv"></i></span>
-  </a>
-  <a href="https://orcid.org/0000-0001-8631-4585" class="about-link" rel="" target="_blank">
-     <span class="about-link-text"><i class="ai  ai-orcid" aria-label="orcid"></i> ORCID</span>
-  </a>
-  <a href="https://www.linkedin.com/in/fatih-boyar-268934130/" class="about-link" rel="" target="_blank">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://www.instagram.com/boyarfatih/" class="about-link" rel="" target="_blank">
-    <i class="bi bi-instagram"></i>
-     <span class="about-link-text">Instagram</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-
-<p>I am a PhD student in Operations and Information Management at Bogazici University. I am curious about maths, probability, statistics, and the logic of science.</p>
-<p>Here, I take notes to myself in my learning journey, experiments, and simulations.</p>
-<section id="recent-notes" class="level2">
-<h2 data-anchor-id="recent-notes">Recent Notes</h2>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</section>
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="c3RhdGlzdGljcw==" data-listing-date-sort="1787432400000" data-listing-file-modified-sort="1787512594162" data-listing-date-modified-sort="1787512594000" data-listing-reading-time-sort="4" data-listing-word-count-sort="792">
-<div class="thumbnail"><a href="./posts/eugenics/index.html" class="no-external">
-<img loading="lazy" src="./posts/eugenics/skull.jpg" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/eugenics/index.html" class="no-external">The Dark Past of Statistics</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
+
+
+
+
+<p>We see names like Francis Galton, Karl Pearson, and Ronald Fisher in almost every statistics textbook. These math giants were vehement protectors and the strongest figures of the eugenics movement. Galton literally coined the term “eugenics.” If you are unfamiliar with it, eugenics is the ideology of selective breeding for humans, and it provided the direct foundations and priors for what eventually became Nazi policies. These men were not just the cool, detached nerds we imagine mathematicians to be today. They were ideologues, and their math was largely a tool to justify their politics. Galton, for instance, invented concepts like correlation and regression specifically to explain how supposedly bad genetics, like being poor or having lower intelligence, were passed directly from parents to children.</p>
+<p>Galton lived in the Victorian era. Everyone in England at the time was obsessed with heredity. These were colonial times, and these views were considered quite normal and highly moral by the ruling class. Today, dominant western political views feel great guilt about this era and try to correct it. Back then, these men believed they were doing hard, empirical science. They were completely blinded by their own values. Because their statistical methods acted as a literal shield for their core beliefs, they harshly attacked anyone who criticized the math or proposed alternatives. Allowing any room for subjective “priors” or acknowledging a researcher’s personal beliefs would completely demolish the purely objective, “data speaks for itself” blind empiricism they held onto so strongly.</p>
+<p>The overall consensus today is that those were the dark times of science. We are very kind to people now(!) But even if modern prior beliefs or ideologies are not awful, the exact same mechanism still holds to this day. In most social sciences, the idea that “data speaks for itself” remains. A researcher approaches a subject claiming to be purely empirical and objective, and that stance becomes the shield for their scientific rigor. That is the exact same illusion the eugenicists used. Apart from an industrial study like measuring bolt sizes in a factory, a researcher naturally starts somewhere, holding some beliefs or priors. Where do these hypotheses or theories come from in the first place?</p>
+<p>Take the famous power posing study by Amy Cuddy and colleagues <span class="citation" data-cites="carney2010power">(<a href="#ref-carney2010power" role="doc-biblioref">Carney, Cuddy, and Yap 2010</a>)</span>. They suggested that adopting expansive power poses produces physiological changes, specifically lowering cortisol and increasing testosterone, which then causes behavioral changes. This became incredibly influential, with those TED talks and all. However, larger replication work <span class="citation" data-cites="ranehill2015assessing">(<a href="#ref-ranehill2015assessing" role="doc-biblioref">Ranehill et al. 2015</a>)</span> could not find the same physiological effect, noting only a subjective feeling of power. This is not merely a problem of whether the study is true or wrong. It is a good illustration of this exact problem: just a reasonable theory paired with empirical work. Even though this specific case has an innocent starting point, the structure is quite similar to how eugenics started. The real issue is that researchers were not discovering a novel phenomenon like power-posing effects out of thin air. They were constructing empirical work around an already-conceived causal story. You might argue that this reasonable theory did not come from nowhere, and they built it on other established work. I will remind you that Francis Galton was Darwin’s half-cousin, and the basis for his theories had very strong connections at the time too. The takeaway for this power-pose example is obvious. The idea that holding a strong pose easily changes your hormones is a highly peculiar claim. The prior probability of this being true should logically be quite low. We need an immense amount of data to actually change a probability that starts that low.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ted3.jpg" class="img-fluid figure-img"></p>
+<figcaption>Don’t take TED talks too seriously (Gemini Generated Image)</figcaption>
+</figure>
 </div>
-<div class="delink listing-description"><a href="./posts/eugenics/index.html" class="no-external">
-<p>How shielding eugenics behind statistics still relevant today</p>
-</a></div>
+<p>This illusion of a discrepancy between the researcher’s mind and the empirical work creates an odd feeling that scientific claims come out of nowhere. When I read a headline claiming that a specific group of people is more likely to do this or that, my immediate feeling is confusion. Where do these claims actually come from? Saying “science said so” is not a sufficient answer. It is no different than a Victorian statistician saying, “I said nothing, the data said it for itself, these people are inferior based on skull size.” We need to see the whole logic, including the prior beliefs and assumptions, that brings us to these conclusions.</p>
+<style>
+/* Banner alanı ve görselin soluklaştırılması */
+.quarto-title-block.default .quarto-title-banner {
+  min-height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Görseli %60 beyazlıkla soldurur (görünürlüğü azaltır) */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+    url("skull.jpg") !important;
+}
+
+/* Doğrudan okunabilir düz siyah yazılar */
+.quarto-title-banner .title,
+.quarto-title-banner .description,
+.quarto-title-banner .quarto-description,
+.quarto-title-banner .subtitle,
+.quarto-title-banner .quarto-subtitle {
+  color: #000000 !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+.quarto-title-banner .description,
+.quarto-title-banner .quarto-description {
+  margin-top: 0.5rem;
+}
+</style>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-carney2010power" class="csl-entry" role="listitem">
+Carney, Dana R, Amy JC Cuddy, and Andy J Yap. 2010. <span>“Power Posing: Brief Nonverbal Displays Affect Neuroendocrine Levels and Risk Tolerance.”</span> <em>Psychological Science</em> 21 (10): 1363–68.
 </div>
-<div class="metadata">
-<a href="./posts/eugenics/index.html" class="no-external">
-<div class="listing-date">
-Aug 23, 2026
+<div id="ref-ranehill2015assessing" class="csl-entry" role="listitem">
+Ranehill, Eva, Anna Dreber, Magnus Johannesson, Susanne Leiberg, Sunhae Sul, and Roberto A Weber. 2015. <span>“Assessing the Robustness of Power Posing: No Effect on Hormones and Risk Tolerance in a Large Sample of Men and Women.”</span> <em>Psychological Science</em> 26 (5): 653–56.
 </div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TkhTVCUyQ3N0YXRpc3RpY3M=" data-listing-date-sort="1770584400000" data-listing-file-modified-sort="1770737411639" data-listing-date-modified-sort="1770737411000" data-listing-reading-time-sort="12" data-listing-word-count-sort="2274">
-<div class="thumbnail"><a href="./posts/reliability_nonsense/index.html" class="no-external">
-<img loading="lazy" src="./posts/reliability_nonsense/reliable.png" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/reliability_nonsense/index.html" class="no-external">If not purely random, than reliable?</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TkhTVA=='); return false;">NHST</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-</div>
-<div class="delink listing-description"><a href="./posts/reliability_nonsense/index.html" class="no-external">
-<p>A perfect example of an NHST fallacy</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/reliability_nonsense/index.html" class="no-external">
-<div class="listing-date">
-Feb 9, 2026
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="c2ltdWxhdGlvbiUyQ3N0YXRpc3RpY3MlMkNOSFNUJTJDQmF5ZXM=" data-listing-date-sort="1765918800000" data-listing-file-modified-sort="1765978424649" data-listing-date-modified-sort="1765978424000" data-listing-reading-time-sort="11" data-listing-word-count-sort="2195">
-<div class="thumbnail"><a href="./posts/missing_priors/index.html" class="no-external">
-<img loading="lazy" src="./posts/missing_priors/coin.png" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/missing_priors/index.html" class="no-external">Why Statistics ‘Proved’ Psychic Powers</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TkhTVA=='); return false;">NHST</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QmF5ZXM='); return false;">Bayes</div>
-</div>
-<div class="delink listing-description"><a href="./posts/missing_priors/index.html" class="no-external">
-<p>Extraordinary Claims and Ordinary Evidence</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/missing_priors/index.html" class="no-external">
-<div class="listing-date">
-Dec 17, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="c2ltdWxhdGlvbiUyQ3N0YXRpc3RpY3MlMkNOSFNU" data-listing-date-sort="1765314000000" data-listing-file-modified-sort="1768482518289" data-listing-date-modified-sort="1768482518000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1439">
-<div class="thumbnail"><a href="./posts/CI_simulation/index.html" class="no-external">
-<img loading="lazy" src="./posts/CI_simulation/intervals_cover.png" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/CI_simulation/index.html" class="no-external">Confidence Intervals</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('c2ltdWxhdGlvbg=='); return false;">simulation</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TkhTVA=='); return false;">NHST</div>
-</div>
-<div class="delink listing-description"><a href="./posts/CI_simulation/index.html" class="no-external">
-<p>They are not what they seem</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/CI_simulation/index.html" class="no-external">
-<div class="listing-date">
-Dec 10, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="TkhTVCUyQ3N0YXRpc3RpY3M=" data-listing-date-sort="1765227600000" data-listing-file-modified-sort="1765961349426" data-listing-date-modified-sort="1765961349000" data-listing-reading-time-sort="6" data-listing-word-count-sort="1111">
-<div class="thumbnail"><a href="./posts/NHST_wrong/index.html" class="no-external">
-<img loading="lazy" src="./posts/NHST_wrong/kulak.png" class="thumbnail-image">
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/NHST_wrong/index.html" class="no-external">Showing Your Right Ear with Your Left Hand</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TkhTVA=='); return false;">NHST</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
-</div>
-<div class="delink listing-description"><a href="./posts/NHST_wrong/index.html" class="no-external">
-<p>How NHST answers the wrong question and tricks us into flipping the logical arrow.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/NHST_wrong/index.html" class="no-external">
-<div class="listing-date">
-Dec 9, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="YmxvZw==" data-listing-date-sort="1764882000000" data-listing-file-modified-sort="1783069768376" data-listing-date-modified-sort="1783069768000" data-listing-reading-time-sort="3" data-listing-word-count-sort="438">
-<div class="thumbnail"><a href="./posts/learning_is_difficult/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/learning_is_difficult/hornet.png"  class="thumbnail-image card-img"/></p>
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/learning_is_difficult/index.html" class="no-external">Learning is difficult</a>
-</h3>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('YmxvZw=='); return false;">blog</div>
-</div>
-<div class="delink listing-description"><a href="./posts/learning_is_difficult/index.html" class="no-external">
-<p>And that’s the correct way</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/learning_is_difficult/index.html" class="no-external">
-<div class="listing-date">
-Dec 5, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main></div>
-</div>
- <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -558,6 +417,13 @@ Dec 5, 2025
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
