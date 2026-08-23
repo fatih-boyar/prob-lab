@@ -203,3 +203,5 @@ The literature has improved on this reliability issue and better methods have be
 I suggested using priors and Beta distributions, arguing that we need to incorporate prior information. 
 We can model judges' category choices not as completely random, but as coming from a common Beta distribution where some categories naturally have higher probability. 
 It sounded esoteric in the class at the time, but I believe that's where the nuance of human judgment lies.
+
+![(Gemini Generated Image)](reliable.png){width=25%}
