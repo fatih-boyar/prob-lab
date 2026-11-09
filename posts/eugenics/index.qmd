@@ -25,7 +25,7 @@ Now, I am not in a position to defend religiosity or its rationality. But do we 
 
 Luckily, we have two sanity checks: direct replication attempts using the exact same approach with larger sample sizes [@sanchez2017direct], [@yilmaz2016analytic]. Neither could find any meaningful effect. The notion that glancing at a bronze statue for thirty seconds could fundamentally dissolve someone's worldview requires an absurdly low prior. When the data isn't forced to serve the narrative, the effect predictably evaporates.
 
-
+![How about thinking our priors? (Gemini Generated Image)](thinker.jpg)
 
 This illusion of a discrepancy between the researcher's mind and the empirical work creates an odd feeling that scientific claims come out of nowhere. When I read a headline claiming that a specific group of people is more likely to do this or that, my immediate feeling is confusion. Where do these claims actually come from? Saying "science said so" is not a sufficient answer. It is no different than a Victorian statistician saying, "I said nothing, the data said it for itself, these people are inferior based on skull size." We need to see the whole logic, including the prior beliefs and assumptions, that brings us to these conclusions.
 
