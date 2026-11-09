@@ -1,5 +1,5 @@
 ---
-title: 'Smoking did not 'Cause' Cancer until 1964'
+title: 'Smoking did not /"Cause/" Cancer until 1964'
 description: "Why it took decades to understand?"
 date: "2026-10-24"
 date-modified: last-modified
