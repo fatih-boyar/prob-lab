@@ -1,5 +1,5 @@
 ---
-title: 'Smoking did not /"Cause/" Cancer until 1964'
+title: 'We couldn't say smoking Caused Cancer until 1964'
 description: "Why it took decades to understand?"
 date: "2026-10-24"
 date-modified: last-modified
@@ -9,3 +9,45 @@ title-block-banner: "chart.jpg"
 draft: true
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* Banner alanı ve görselin soluklaştırılması */
+.quarto-title-block.default .quarto-title-banner {
+  min-height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Görseli %60 beyazlıkla soldurur (görünürlüğü azaltır) */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+    url("skull.jpg") !important;
+}
+
+/* Doğrudan okunabilir düz siyah yazılar */
+.quarto-title-banner .title,
+.quarto-title-banner .description,
+.quarto-title-banner .quarto-description,
+.quarto-title-banner .subtitle,
+.quarto-title-banner .quarto-subtitle {
+  color: #000000 !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+.quarto-title-banner .description,
+.quarto-title-banner .quarto-description {
+  margin-top: 0.5rem;
+}
+</style>
